@@ -39,7 +39,7 @@ function updateScreen() {
     guessArea.textContent = "Guesses Letters: " + guesses
 
     let image = document.getElementById("hangmanpic");
-    image.src = `images` + ${ }
+    image.src = `images` + ${ };
 }
 /*
 If you have whole word you dont have dashes
