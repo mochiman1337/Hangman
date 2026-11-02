@@ -1,5 +1,5 @@
 ##How is hangman played IRL?
-1. Draw the starting point
+1. Draw the starting point //Check//
 2. Pick the word -> A list of possible words, save on of them into a variable
 3. Draw dashes -> 1 dash for each letter in the word
     a. For loop? For Each?
