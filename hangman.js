@@ -9,16 +9,24 @@ function newGame() {
     guessCount = MAX_GUESSES;
     let randomIndex = parseInt(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
+
+    document.getElementById("guess").value = "";//
     updateScreen();
 }
 
 function guess() {
+
+    if (word === "") { return; }//Added to prevent guess before game starts.
+
     let input = document.getElementById("guess");
-    let letter = input.value;
+    let letter = input.value.toLowerCase();
+
+
     if (word.indexOf(letter) < 0) {
         guessCount--;
     }
     guesses += letter;
+
     updateScreen();
 }
 
@@ -36,7 +44,7 @@ function updateScreen() {
     let clue = document.getElementById("clue");
     clue.textContent = clueString;
     let guessArea = document.getElementById("guesses");
-    guessArea.textContent = "Guesses Letters: " + guesses
+    guessArea.textContent = "Guesses Letters: " + guesses;
 
     let image = document.getElementById("hangmanpic");
     image.src = `images/${guessCount}.gif`;
