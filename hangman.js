@@ -4,6 +4,8 @@ let word = "";
 let MAX_GUESSES = 6;
 let guessCount = MAX_GUESSES;
 
+let gameState = false;//Added to track games state for win/loss status
+
 function newGame() {
     guesses = "";
     guessCount = MAX_GUESSES;
@@ -47,6 +49,16 @@ function updateScreen() {
     clue.textContent = clueString;
     let guessArea = document.getElementById("guesses");
     guessArea.textContent = "Guesses Letters: " + guesses;
+
+    //Added to display text for winning and losing messages
+    if (guessCount === 0) {
+        gameState = true;
+        guessArea.textContent = "Too bad you LOSE!";
+    }
+    else if (clueString.indexOf("_") === -1) {
+        gameState = true;
+        guessArea.textContent = "Congradulations you WIN!";
+    }
 
     let image = document.getElementById("hangmanpic");
     image.src = `images/${guessCount}.gif`;
