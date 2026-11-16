@@ -22,6 +22,7 @@ function guess() {
     let letter = input.value.toLowerCase();//Added so  letter can match anyword in array
     input.value = "";//Added so that it empties the field afterwards
 
+    if (letter === "" || guess.indexOf(letter) >= 0) { return; }//This prevents duplicate letters
 
     if (word.indexOf(letter) < 0) {
         guessCount--;
