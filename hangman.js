@@ -18,7 +18,9 @@ function newGame() {
 
 function guess() {
 
-    if (word === "") { return; }//Added to prevent guess before game starts.
+    if (word === "" || gameState) { return; }
+    //Added to prevent guess before game starts.
+    //Added Or so it checks if word is selected or the game is over or not
 
     let input = document.getElementById("guess");
     let letter = input.value.toLowerCase();//Added so  letter can match anyword in array
