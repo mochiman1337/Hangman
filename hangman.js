@@ -9,6 +9,8 @@ let gameState = false;//Added to track games state for win/loss status
 function newGame() {
     guesses = "";
     guessCount = MAX_GUESSES;
+    gameState = false;//Added to fix newgame reset
+
     let randomIndex = parseInt(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
 
