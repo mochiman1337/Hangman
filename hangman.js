@@ -63,7 +63,9 @@ function updateScreen() {
     }
 
     let image = document.getElementById("hangmanpic");
-    image.src = `images/${guessCount}.gif`;
+
+    image.src = "images/hangman" + guessCount + ".gif";
+    //image.src = `images/${guessCount}.gif`;
 }
 /*
 If you have whole word you dont have dashes
