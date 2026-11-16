@@ -29,7 +29,7 @@ function guess() {
     input.value = "";//Added so that it empties the field afterwards
 
     if (letter === "" || guesses.indexOf(letter) >= 0) { return; }
-    //This prevents duplicate letters. Mispelled, cheanged to guesses
+    // Prevents empty and duplicate letter guesses. Fixed!
 
     if (word.indexOf(letter) < 0) {
         guessCount--;
@@ -53,7 +53,7 @@ function updateScreen() {
     let clue = document.getElementById("clue");
     clue.textContent = clueString;
     let guessArea = document.getElementById("guesses");
-    guessArea.textContent = "Guesses Letters: " + guesses;
+    guessArea.textContent = "Guessed Letters: " + guesses;
 
     //Added to display text for winning and losing messages
     if (guessCount === 0) {
@@ -62,7 +62,7 @@ function updateScreen() {
     }
     else if (clueString.indexOf("_") === -1) {
         gameState = true;
-        guessArea.textContent = "Congradulations you WIN!";
+        guessArea.textContent = "Congratulations you WIN!";
     }
 
     let image = document.getElementById("hangmanpic");
