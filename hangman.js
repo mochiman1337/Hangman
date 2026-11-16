@@ -10,7 +10,7 @@ function newGame() {
     let randomIndex = parseInt(Math.random() * POSSIBLE_WORDS.length);
     word = POSSIBLE_WORDS[randomIndex];
 
-    document.getElementById("guess").value = "";//
+    document.getElementById("guess").value = "";//Added this so clears text for new game!
     updateScreen();
 }
 
@@ -19,7 +19,8 @@ function guess() {
     if (word === "") { return; }//Added to prevent guess before game starts.
 
     let input = document.getElementById("guess");
-    let letter = input.value.toLowerCase();
+    let letter = input.value.toLowerCase();//Added so  letter can match anyword in array
+    input.value = "";//Added so that it empties the field afterwards
 
 
     if (word.indexOf(letter) < 0) {
